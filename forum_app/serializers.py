@@ -1,5 +1,5 @@
 from forum_app.models import Comment, Post
-from user_auth_app import serializers
+from rest_framework import serializers
 
 
 class PostSerializer(serializers.ModelSerializer):

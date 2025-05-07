@@ -1,6 +1,5 @@
-from os import path
-
-from forum_app.views import CommentDetailView, CommentListCreateView, PostDetailView, PostListCreateView
+from django.urls import path
+from .views import CommentDetailView, CommentListCreateView, PostDetailView, PostListCreateView
 
 
 urlpatterns = [
