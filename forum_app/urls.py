@@ -4,7 +4,7 @@ from .views import CommentDetailView, CommentListCreateView, PostDetailView, Pos
 
 urlpatterns = [
     path('posts/', PostListCreateView.as_view()),
-    path('posts/<int:pk>', PostDetailView.as_view()),
+    path('posts/<int:pk>/', PostDetailView.as_view()),
     path('comments/', CommentListCreateView.as_view()),
-    path('comments/<int:pk>', CommentDetailView.as_view()),
+    path('comments/<int:pk>/', CommentDetailView.as_view()),
 ]
