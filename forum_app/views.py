@@ -7,7 +7,7 @@ from rest_framework.throttling import UserRateThrottle, AnonRateThrottle
 from forum_app.models import Comment, Post
 from forum_app.permissions import IsOwnerOrReadOnly
 from forum_app.serializers import CommentSerializer, PostSerializer
-from forum_app.throttling import PostThrottle, CommentThrottle
+from forum_app.throttling import PostThrottle
 
 
 class PostListCreateView(ListCreateAPIView):
@@ -30,7 +30,7 @@ class CommentListCreateView(ListCreateAPIView):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
-    throttle_classes = [CommentThrottle, AnonRateThrottle, UserRateThrottle]
+    throttle_classes = [PostThrottle, AnonRateThrottle, UserRateThrottle]
 
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)

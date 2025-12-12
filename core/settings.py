@@ -69,8 +69,7 @@ REST_FRAMEWORK = {
         'user': '1000/hour',
         # 'anon': '3/min',
         # 'user': '3/hour',
-        'posts': '1/min',
-        'comments': '1/min'
+        'posts': '1/min'
     }
 }
 

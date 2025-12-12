@@ -8,12 +8,3 @@ class PostThrottle(UserRateThrottle):
         if request.method == 'POST':
             return super().allow_request(request, view)
         return True
-
-
-class CommentThrottle(UserRateThrottle):
-    scope = 'comments'
-
-    def allow_request(self, request, view):
-        if request.method == 'POST':
-            return super().allow_request(request, view)
-        return True
